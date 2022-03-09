@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Post
+from .models import Movie,Comment
 
-admin.site.register(Post)
+
+admin.site.register(Comment)
+admin.site.register(Movie)
 # Register your models here.

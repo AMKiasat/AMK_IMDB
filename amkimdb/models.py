@@ -1,8 +1,21 @@
+import datetime
+
 from django.db import models
 
-class Post(models.Model):
+class Movie(models.Model):
+    id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length = 100)
-    content = models.TextField()
-    audio_path = models.TextField()
-    image = models.ImageField(null=True , default=None , upload_to = 'post_pics')
-# Create your models here.
+    released_year = models.CharField(max_length = 10)
+    image = models.ImageField(blank=True, upload_to = 'post_pics')
+
+    def __str__(self):
+        return self.title
+
+class Comment(models.Model):
+    user = models.CharField(max_length = 100)
+    text = models.TextField()
+    date = models.DateTimeField(default=datetime.datetime.now)
+    movie = models.ForeignKey(Movie, blank=True, on_delete=models.CASCADE, related_name='comments', null=True)
+
+    def __str__(self):
+        return f"MOVIE: {self.movie} USER: {self.user} DATE: {self.date}"
