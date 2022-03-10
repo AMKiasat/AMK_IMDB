@@ -39,12 +39,18 @@ and is wrapped around the whole page content, except for the footer in this exam
           <div class="w3-justify">
 
             <p>Choose your prefered language.</p>
-            <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b></i>
-                  English</b></button></p>
-            <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b></i>
-                  فارسی</b></button></p>
-            <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b></i>
-                  español</b></button></p>
+            <p>
+            <form action='/{{movie_id}}/comments' target="_blank" method="get"><input
+                class="w3-button w3-white w3-border" type="submit" name="English" value="English" /></form>
+            </p>
+            <p>
+            <form action='/{{movie_id}}/comments' target="_blank" method="get"><input
+                class="w3-button w3-white w3-border" type="submit" name="فارسی" value="فارسی" /></form>
+            </p>
+            <p>
+            <form action='/{{movie_id}}/comments' target="_blank" method="get"><input
+                class="w3-button w3-white w3-border" type="submit" name="español" value="español" /></form>
+            </p>
             <p class="w3-clear"></p>
 
           </div>

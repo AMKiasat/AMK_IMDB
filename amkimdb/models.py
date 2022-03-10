@@ -8,6 +8,11 @@ class Movie(models.Model):
     released_year = models.CharField(max_length = 10)
     image = models.URLField()
 
+    @property
+    def movie_comments(self):
+        return self.comments.all()
+
+
     def __str__(self):
         return self.title
 

@@ -48,7 +48,7 @@ and is wrapped around the whole page content, except for the footer in this exam
           <div class="w3-justify">
             <img src="{{ movie.image }}" alt="Runway" style="width:100%" class="w3-padding-16">
             <p class="w3-right">
-            <form action="ajax4.php" target="_blank" method="POST"><input class="w3-button w3-black" type="submit"
+            <form action='/{{movie.id}}/language' target="_blank" method="get"><input class="w3-button w3-black" type="submit"
                 name="comments" value="comments" /></form>
             </p>
             <p class="w3-clear"></p>
