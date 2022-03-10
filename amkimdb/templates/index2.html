@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>Choose language</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Oswald"
+  }
+
+  body {
+    font-family: "Open Sans"
+  }
+</style>
+
+<body class="w3-light-grey">
+  <!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+  <div class="w3-content" style="max-width:1600px">
+
+    <!-- Grid -->
+    <div class="w3-row w3-padding w3-border">
+
+      <!-- Blog entries -->
+      <div class="w3-col l8 s12">
+
+
+        <!-- Blog entry -->
+        <div class="w3-container w3-white w3-margin w3-padding-large">
+          <div class="w3-justify">
+
+            <p>Choose your prefered language.</p>
+            <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b></i>
+                  English</b></button></p>
+            <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b></i>
+                  فارسی</b></button></p>
+            <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b></i>
+                  español</b></button></p>
+            <p class="w3-clear"></p>
+
+          </div>
+        </div>
+
+
+
+
+        <script>
+          // Toggle between hiding and showing blog replies/comments
+          // document.getElementById("myBtn").click();
+          // function myFunction(id) {
+          //   var x = document.getElementById(id);
+          //   if (x.className.indexOf("w3-show") == -1) {
+          //     x.className += " w3-show";
+          //   } else { 
+          //     x.className = x.className.replace(" w3-show", "");
+          //   }
+          // }
+
+          // $(document).ready(function(){
+          //     $('.w3-button').click(function(){
+          //         var clickBtnValue = $(this).val();
+          //         var ajaxurl = 'ajax.php',
+          //         data =  {'action': clickBtnValue};
+          //         $.post(ajaxurl, data, function (response) {
+          //             // Response div goes here.
+          //             alert("action performed successfully");
+          //         });
+          //     });
+          // });
+
+          function likeFunction(x) {
+            x.style.fontWeight = "bold";
+            x.innerHTML = "✓ Liked";
+          }
+        </script>
+
+</body>
+
+</html>
