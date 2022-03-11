@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Choose language</title>
+<title>comments</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -36,10 +36,15 @@ and is wrapped around the whole page content, except for the footer in this exam
 
         <div class="w3-container w3-white w3-margin w3-padding-large">
           <div class="w3-container" id="contact" style="margin-top:75px">
-            <h1 class="w3-xxxlarge w3-text-red"><b>Comment.</b></h1>
+            <h1 class="w3-xxxlarge w3-text-red"><b>Comments.</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
-            <p>Do you want to comment for us? Fill out the form and fill me in with the details :) We love meeting new
-              people!</p>
+            <p>{% for comment in comments %}
+            <div class="w3-content">
+              <h2>from: {{ comment.user }}</h3>
+              <h4><span class="w3-opacity">{{ comment.text }}</span></h5>
+              <h6><span class="w3-opacity">{{ comment.date }}</span></h5>
+            </div>
+            {% endfor %}</p>
             <form action="action_page.php" target="_blank" method="POST">
               <div class="w3-section">
                 <label>Name</label>
