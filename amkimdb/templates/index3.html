@@ -40,24 +40,15 @@ and is wrapped around the whole page content, except for the footer in this exam
             <hr style="width:50px;border:5px solid red" class="w3-round">
             <p>{% for comment in comments %}
             <div class="w3-content">
-              <h2>from: {{ comment.user }}</h3>
+              <h2>from: {{ comment.user }} </h3>
               <h4><span class="w3-opacity">{{ comment.text }}</span></h5>
               <h6><span class="w3-opacity">{{ comment.date }}</span></h5>
             </div>
             {% endfor %}</p>
-            <form action="action_page.php" target="_blank" method="POST">
-              <div class="w3-section">
-                <label>Name</label>
-                <input class="w3-input w3-border" type="text" name="Name" required>
-              </div>
-              <div class="w3-section">
-                <label>Pic_ID</label>
-                <input class="w3-input w3-border" type="number" name="Pic_ID" required>
-              </div>
-              <div class="w3-section">
-                <label>Message</label>
-                <input class="w3-input w3-border" type="text" name="Message" required>
-              </div>
+
+            <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{form}}
               <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send
                 Message</button>
             </form>
