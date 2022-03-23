@@ -133,7 +133,8 @@ def comment_page(request, movie_id, language):
             text = result['results'][0]['alternatives'][0]['transcript']
             result2 = natural_language_understanding.analyze(text=text, features=Features(emotion=EmotionOptions())).get_result()
             anger = result2['emotion']['document']['emotion']['anger']
-            if anger < 0.5:
+            if anger < 0.4:
+                print(anger)
                 movie = models.Movie.objects.get(id=movie_id)
                 models.Comment(user=request.POST['username'], text=text, movie=movie).save()
         return HttpResponseRedirect('/')
